@@ -13,7 +13,3 @@ az role assignment create \
     --role "Key Vault Administrator" \
     --scope /subscriptions/$(az account show --query id -o tsv)/resourceGroups/rg-money-hub/providers/Microsoft.KeyVault/vaults/kv-moneyhub-rm566299
 
-# az keyvault secret set \
-#   --vault-name kv-moneyhub-rm566299 \
-#   --name mysql-root-password \
-#   --value "$MYSQL_ROOT_PASSWORD"
