@@ -10,7 +10,7 @@ export MYSQL_DATABASE=db-dimdim
 export MYSQL_USER=$(az keyvault secret show --vault-name kv-moneyhub-rm566299 --name mysql-user --query value --output tsv)
 export MYSQL_PASSWORD=$(az keyvault secret show --vault-name kv-moneyhub-rm566299 --name mysql-password --query value --output tsv)
 export SPRING_DATASOURCE_URL=$(az keyvault secret show --vault-name kv-moneyhub-rm566299 --name spring-datasource-url --query value --output tsv)
-export SPRING_DATASOURCE_USER=$MYSQL_USERNAME
+export SPRING_DATASOURCE_USERNAME=$MYSQL_USERNAME
 export SPRING_DATASOURCE_PASSWORD=$MYSQL_PASSWORD
 export CONNECTIONSTRINGS=$(az keyvault secret show --vault-name kv-moneyhub-rm566299 --name connection-strings --query value --output tsv)
 
