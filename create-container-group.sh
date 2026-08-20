@@ -7,7 +7,7 @@ export MYSQL_PASSWORD=$(az keyvault secret show --vault-name kv-moneyhub-rm56629
 export SPRING_DATASOURCE_URL=$(az keyvault secret show --vault-name kv-moneyhub-rm566299 --name spring-datasource-url --query value --output tsv)
 export SPRING_DATASOURCE_USER=$MYSQL_USER
 export SPRING_DATASOURCE_PASSWORD=$MYSQL_PASSWORD
-export CONNECTIONSTRINGS=$$(az keyvault secret show --vault-name kv-moneyhub-rm566299 --name connection-strings --query value --output tsv)
+export CONNECTIONSTRINGS=$(az keyvault secret show --vault-name kv-moneyhub-rm566299 --name connection-strings --query value --output tsv)
 
 ADMIN_USERNAME=$(az acr credential show --name ${ACR_NAME} \
                                         --resource-group rg-money-hub \
