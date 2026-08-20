@@ -14,10 +14,10 @@ export SPRING_DATASOURCE_USER=$MYSQL_USERNAME
 export SPRING_DATASOURCE_PASSWORD=$MYSQL_PASSWORD
 export CONNECTIONSTRINGS=$(az keyvault secret show --vault-name kv-moneyhub-rm566299 --name connection-strings --query value --output tsv)
 
-ADMIN_USERNAME=$(az acr credential show --name ${ACR_NAME} \
+export ADMIN_USERNAME=$(az acr credential show --name ${ACR_NAME} \
                                         --resource-group rg-money-hub \
                                         --query username --output tsv) && \
-ADMIN_PASSWORD=$(az acr credential show --name ${ACR_NAME} \
+export ADMIN_PASSWORD=$(az acr credential show --name ${ACR_NAME} \
                                         --resource-group rg-money-hub \
                                         --query passwords[0].value --output tsv)
 
